@@ -1,0 +1,45 @@
+<div>
+    
+    <p>escribe algo</p>
+    <input type="text" [(ngModel)] = "mi_texto" (keyup.enter) ="addMarca(); mi_texto =''">
+    <button (click) = "addMarca()"> addMarca</button>
+    <p>
+        {{mi_texto}}
+    </p>
+
+    <p>
+        las mejores marcas : 
+    </p>
+
+    <ul>
+        <li *ngFor="let marca of marcas ; let indice = index">{{indice + ' -> ' + marca}}
+            <button (click) ="borrarMarca(indice)"> Borrar </button>
+        </li>
+    </ul>
+
+    <p>lista de CPU</p>
+
+    <ul>
+        <li *ngFor ="let case of cpus">
+            <span [ngStyle] = "{
+                'text-decoration': !case.ventas ? 'line-through' : 'none'
+            }">
+                {{case.nombre}} - <strong>{{case.cantidad}}</strong>
+            </span>
+            
+        
+            <span *ngIf ="case.cantidad < 5" 
+                [style.background]="case.cantidad < 5 ? 'green' : 'transparent'"
+                [style.color]="case.cantidad < 5 ? 'white' : 'transparent'"
+                >
+                !escaso!
+            </span>
+        </li>
+    </ul>
+
+
+    
+
+</div>
+
+

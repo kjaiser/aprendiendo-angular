@@ -1,0 +1,29 @@
+
+<br>
+<input type="text" [(ngModel)] ="color" name="tcolor">
+<label for="tcolor"> cambiar color</label>
+
+<div id="contenedorBoton">
+
+    <!-- se puede colocar una condicione -->
+    
+    <!-- <p [class.newClass] = "contenido"
+         [ngClass] =
+        "{
+            'clase1': condicion,
+            'clase2': condicion,
+             ...
+            }"
+        {{contenido}}</p>  -->
+
+        
+    <p [class.newClass] = "contenido">{{contenido}}</p>
+    <br>
+    <button id="primerBoton" [ngStyle] ="{
+        'background': color,
+        'color' : config.color,
+        'font-size':'20px'
+    }">{{titulo}}</button>
+
+
+</div>

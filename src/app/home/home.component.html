@@ -1,0 +1,27 @@
+<h2>Pagina principal</h2>
+<!-- 
+<div *ngIf = "identificado ; else noIdentificado">
+    <h3>Estas identificado jajaja</h3>
+    <button (click) = "exit()">exit</button>
+</div>
+
+<ng-template #noIdentificado>
+    <p>No estas identificado, presiona para identificarte</p>
+    <button (click) = "setIdentificado()">Identificarse</button>
+</ng-template> 
+-->
+
+ <!-- OTRA FORMA PARA HACER LO DE ARRIBA -->
+
+
+<div *ngIf = "identificado ; then siIdentificado else noIdentificado"></div>
+
+<ng-template #siIdentificado>
+    <h3>Estas identificado jajaja</h3>
+    <button (click) = "exit()">exit</button>
+</ng-template> 
+
+<ng-template #noIdentificado>
+    <p>No estas identificado, presiona para identificarte</p>
+    <button (click) = "setIdentificado()">Identificarse</button>
+</ng-template> 
